@@ -6,7 +6,7 @@ const checkWord = async (req, res) => {
       return res.status(400).json({ success: false, message: "Guess must be a string" });
     }
 
-    if (!guess || guess.length !== 6) {
+    if (!guess || guess.length !== 5) {
       return res.status(400).json({ success: false, message: "Invalid word length" });
     }
 
