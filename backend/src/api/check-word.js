@@ -10,7 +10,7 @@ const checkWord = async (req, res) => {
       return res.status(400).json({ success: false, message: "Invalid word length" });
     }
 
-    const word = "pidwin";
+    const word = "games";
     let guessMap = "";
 
     for (let i = 0; i < word.length; i++) {
