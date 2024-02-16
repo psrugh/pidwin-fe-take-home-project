@@ -1,4 +1,4 @@
-import styles from './styles.module.css';
+import styles from './Tile.module.css';
 
 const classMap = {
   1: styles.correct,

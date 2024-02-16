@@ -1,4 +1,4 @@
-import styles from './styles.module.css';
+import styles from './Button.module.css';
 
 function Button({ guessWord, children, disabledButton }) {
   return (

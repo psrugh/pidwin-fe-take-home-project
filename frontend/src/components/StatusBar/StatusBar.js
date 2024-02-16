@@ -1,4 +1,4 @@
-import styles from './styles.module.css';
+import styles from './StatusBar.module.css';
 
 function StatusBar() {
   return (

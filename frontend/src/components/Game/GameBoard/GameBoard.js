@@ -1,28 +1,28 @@
-import Tiles from './Tiles';
-import GameKeyboard from './GameKeyboard';
-import Button from '../../ui/Button';
+import Tiles from './Tiles/Tiles';
+import GameKeyboard from './GameKeyboard/GameKeyboard';
+import Button from '../../ui/Button/Button';
 import { useState, useEffect } from 'react'
-import styles from './styles.module.css';
+import styles from './GameBoard.module.css';
 
-const emptyRow = ['','','','','']
-const maxRowIdx = 5;
+const rowLength = 5;
+const numRows = 6;
+const maxRowIdx = numRows - 1;
+const emptyRow = new Array(rowLength).fill('');
 
-function fetchGuessResult(word) {
-  return fetch(`http://localhost:5001/api/word?guess=${word}`)
-  .then((res) => {
-    return res.json()
-  })
+async function fetchGuessResult(word) {
+  const res = await fetch(`http://localhost:5001/api/word?guess=${word}`);
+  return await res.json();
 }
 
 function GameBoard() {
   const [gameStatus, setGameStatus] = useState('active')
-  const [guesses, setGuesses] = useState(new Array(6).fill(emptyRow));
-  const [guessResults, setGuessResults] = useState(new Array(6).fill(emptyRow));
+  const [guesses, setGuesses] = useState(new Array(numRows).fill(emptyRow));
+  const [guessResults, setGuessResults] = useState(new Array(numRows).fill(emptyRow));
   const [guess, setGuess] = useState('');
   const [activeRowIdx, setActiveRowIdx] = useState(0)
 
   async function guessWord() {
-    if(guess.length < 5) {
+    if(guess.length < rowLength) {
       return;
     }
     const apiGuessResult = await fetchGuessResult(guess);
@@ -32,7 +32,7 @@ function GameBoard() {
       setGuessResults(localGuessResults)
       if(apiGuessResult.result === '11111') {
         setGameStatus('pass')
-      } else if(activeRowIdx === 5) {
+      } else if(activeRowIdx === maxRowIdx) {
         setGameStatus('fail')
       } else {
         setGuess('');
@@ -44,9 +44,9 @@ function GameBoard() {
   }
 
   useEffect(() => {
-    const guessRow = new Array(5).fill('')
+    const guessRow = [...emptyRow]
     const currentGuesses = [...guesses];
-    for(let i = 0; i < 5; i++) {
+    for(let i = 0; i < rowLength; i++) {
       guessRow[i] = guess[i] || ''
     }
     currentGuesses[activeRowIdx] = guessRow;
@@ -60,7 +60,7 @@ function GameBoard() {
       </section>
       {
         gameStatus === 'active' ? 
-        <Button guessWord={guessWord} disabledButton={guess.length < 5}>
+        <Button guessWord={guessWord} disabledButton={guess.length < maxRowIdx}>
           Guess Word
         </Button> : null
       }

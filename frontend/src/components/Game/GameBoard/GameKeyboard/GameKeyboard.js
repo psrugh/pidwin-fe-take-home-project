@@ -1,7 +1,9 @@
 import { useEffect, useState, useRef } from 'react';
 import Keyboard from 'react-simple-keyboard';
-import styles from './styles.module.css';
+import styles from './GameKeyboard.module.css';
 import 'react-simple-keyboard/build/css/index.css';
+
+// the following file is formatted as a theme file for the Keyboard library
 import './wordle.theme.css';
 
 const buttonLayout = {
@@ -11,6 +13,7 @@ const buttonLayout = {
     '{enter} z x c v b n m {bksp}',
   ],
 }
+// keyboard library specific
 const highlightedClasses = 'hg-button hg-standardBtn hg-guessedLetter';
 
 function GameKeyboard({ setGuess, guessWord, guessResults, gameStatus }) {

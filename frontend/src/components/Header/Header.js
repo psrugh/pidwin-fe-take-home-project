@@ -1,5 +1,5 @@
-import StatusBar from '../StatusBar';
-import styles from './styles.module.css';
+import StatusBar from '../StatusBar/StatusBar';
+import styles from './Header.module.css';
 
 function Header() {
   return (

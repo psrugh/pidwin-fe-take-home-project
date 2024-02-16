@@ -1,5 +1,5 @@
-import Tile from './Tile';
-import styles from './styles.module.css';
+import Tile from './Tile/Tile';
+import styles from './Tiles.module.css';
 
 function Tiles({ guesses, guessResults }) {
   return (

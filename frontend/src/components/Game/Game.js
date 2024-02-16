@@ -1,5 +1,5 @@
-import GameBoard from './GameBoard/';
-import styles from './styles.module.css';
+import GameBoard from './GameBoard/GameBoard';
+import styles from './Game.module.css';
 
 function Game() {
   return (

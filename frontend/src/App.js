@@ -1,5 +1,5 @@
-import Header from './components/Header';
-import Game from './components/Game';
+import Header from './components/Header/Header';
+import Game from './components/Game/Game';
 import styles from './App.module.css';
 
 
