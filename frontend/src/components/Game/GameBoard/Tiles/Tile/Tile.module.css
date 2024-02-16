@@ -57,7 +57,7 @@
 }
 .incorrect .back:after {
     content: '';
-    width: 84px; /* pythagorean of 60/60 right triangle */
+    width: 84px; /* hypotenuse of 60/60 right triangle */
     height: 2px;
     background: var(--red);
     position: absolute;
