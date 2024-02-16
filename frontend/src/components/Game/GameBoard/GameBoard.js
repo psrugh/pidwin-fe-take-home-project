@@ -49,7 +49,6 @@ function GameBoard() {
   }
 
   useEffect(() => {
-    console.log(guess)
     const guessRow = getEmptyRow();
     const currentGuesses = [...guesses];
     if(currentGuesses[activeRowIdx].join('') !== guess) {
