@@ -49,15 +49,17 @@ function GameBoard() {
   }
 
   useEffect(() => {
+    console.log(guess)
     const guessRow = getEmptyRow();
     const currentGuesses = [...guesses];
-    for (let i = 0; i < rowLength; i++) {
-      guessRow[i] = guess[i] || '';
+    if(currentGuesses[activeRowIdx].join('') !== guess) {
+      for (let i = 0; i < rowLength; i++) {
+        guessRow[i] = guess[i] || '';
+      }
+      currentGuesses[activeRowIdx] = guessRow;
+      setGuesses(currentGuesses);
     }
-    currentGuesses[activeRowIdx] = guessRow;
-    setGuesses(currentGuesses);
-  // }, [guess, guesses, activeRowIdx]);
-  }, [guess]);
+  }, [guess, guesses, activeRowIdx]);
 
   return (
     <div className={styles.gameBoard}>
