@@ -13,6 +13,7 @@ const buttonLayout = {
     '{enter} z x c v b n m {bksp}',
   ],
 }
+
 // keyboard library specific
 const highlightedClasses = 'hg-button hg-standardBtn hg-guessedLetter';
 

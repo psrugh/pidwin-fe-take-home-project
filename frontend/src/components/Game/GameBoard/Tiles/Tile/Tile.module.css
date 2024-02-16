@@ -14,10 +14,6 @@
     transition: transform 1s;
     transform-style: preserve-3d;
 }
-.li:hover .tileContent {
-    transform: rotateY( 180deg ) ;
-    transition: transform 0.5s;
-}
 .face,
 .back {
     position: absolute;
@@ -32,13 +28,15 @@
     text-align: center;
     backface-visibility: hidden;
     line-height: 60px;
-    border: 1px solid var(--gray-dark);
+    border: 2px solid var(--gray-dark);
     box-sizing: border-box;
 }
-
 .back {
     background-color: var(--black);
     transform: rotateY( 180deg );
+}
+.activeTile .face {
+    border-color: var(--gray-light);
 }
 .correct,
 .wrongPlace,
@@ -48,25 +46,23 @@
 }
 .correct .back {
     background-color: var(--green);
-    border: 1px solid var(--green);
+    border-color: var(--green);
 }
 .wrongPlace .back {
     background-color: var(--mustard);
-    border: 1px solid var(--mustard);
+    border-color: var(--mustard);
 }
 .incorrect .back {
-    border: 1px solid var(--red);
+    border-color: var(--red);
 }
 .incorrect .back:after {
     content: '';
-    width: 84px; /* pythagoren of 60px */
-    height: 1px;
-
+    width: 84px; /* pythagorean of 60/60 right triangle */
+    height: 2px;
     background: var(--red);
-
     position: absolute;
     top: 0;
     left: 0;
     transform: rotate(-45deg);
-    transform-origin: 70px 30px;
+    transform-origin: 68px 31px;
 }

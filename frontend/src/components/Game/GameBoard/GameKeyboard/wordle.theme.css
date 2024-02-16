@@ -30,6 +30,15 @@
     box-shadow: none;
     border: none;
 }
+.hg-theme-wordle .hg-button {
+    background-color: var(--gray-dark);
+    color: var(--white);
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 4px;
+    box-shadow: none;
+    border: none;
+}
 .hg-theme-wordle .hg-button.hg-activeButton,
 .hg-theme-wordle .hg-button.hg-guessedLetter {
     background-color: var(--gray-light);
