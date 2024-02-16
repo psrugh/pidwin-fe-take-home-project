@@ -1,0 +1,72 @@
+@import url("../../../../../theme.module.css");
+
+.li {
+    box-sizing: border-box;
+    width: 60px;
+    height: 60px;
+    color: var(--white);
+    position: relative;
+}
+.tileContent {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+.li:hover .tileContent {
+    transform: rotateY( 180deg ) ;
+    transition: transform 0.5s;
+}
+.face,
+.back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: var(--black);
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: center;
+    backface-visibility: hidden;
+    line-height: 60px;
+    border: 1px solid var(--gray-dark);
+    box-sizing: border-box;
+}
+
+.back {
+    background-color: var(--black);
+    transform: rotateY( 180deg );
+}
+.correct,
+.wrongPlace,
+.incorrect {
+    transform: rotateY( 180deg ) ;
+    transition: transform 0.5s;
+}
+.correct .back {
+    background-color: var(--green);
+    border: 1px solid var(--green);
+}
+.wrongPlace .back {
+    background-color: var(--mustard);
+    border: 1px solid var(--mustard);
+}
+.incorrect .back {
+    border: 1px solid var(--red);
+}
+.incorrect .back:after {
+    content: '';
+    width: 84px; /* pythagoren of 60px */
+    height: 1px;
+
+    background: var(--red);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-45deg);
+    transform-origin: 70px 30px;
+}

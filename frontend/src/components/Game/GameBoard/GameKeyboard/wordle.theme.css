@@ -1,0 +1,62 @@
+@import url("../../../../theme.module.css");
+
+.hg-theme-wordle {
+    background: transparent;
+    width: 100vw;
+}
+
+.hg-theme-wordle .hg-rows {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.hg-theme-wordle .hg-row {
+    justify-content: center;
+}
+.hg-theme-wordle .hg-row:nth-child(2) {
+    margin-right: 5%;
+    margin-left: 5%;
+}
+.hg-theme-wordle .hg-row:nth-child(3) {
+    margin-right: 2%;
+    margin-left: 2%;
+}
+.hg-theme-wordle .hg-button {
+    background-color: var(--gray-dark);
+    color: var(--white);
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 4px;
+    box-shadow: none;
+    border: none;
+}
+.hg-theme-wordle .hg-button.hg-activeButton,
+.hg-theme-wordle .hg-button.hg-guessedLetter {
+    background-color: var(--gray-light);
+}
+.hg-theme-wordle .hg-button.hg-enterButton {
+    font-size: 12px;
+}
+.hg-theme-wordle .hg-button.hg-standardBtn {
+    padding:0;
+    width: auto;
+}
+@media only screen and (min-width: 376px) {
+
+    .hg-theme-wordle {
+        background: transparent;
+        width: 100%;
+    }
+    
+    .hg-theme-wordle .hg-button.hg-standardBtn {
+        width: 50px;
+        box-sizing: border-box;
+    }
+    .hg-theme-wordle .hg-button {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 20px;
+        letter-spacing: -2px;
+        padding:5px;
+    }
+}

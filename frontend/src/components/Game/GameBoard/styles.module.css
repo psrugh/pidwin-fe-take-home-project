@@ -1,0 +1,11 @@
+@import url("../../../theme.module.css");
+
+.gameBoard {
+    display: flex;
+    flex-direction: column;
+    row-gap: 45px;
+}
+.tiles {
+    width: 340px;
+    margin: 0 auto;
+}

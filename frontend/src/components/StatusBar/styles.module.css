@@ -1,0 +1,5 @@
+@import url("../../theme.module.css");
+
+.statusBar {
+    background: var(--green);
+}

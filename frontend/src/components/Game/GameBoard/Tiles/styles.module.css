@@ -1,0 +1,15 @@
+@import url("../../../../theme.module.css");
+.tiles {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    row-gap: 0.5em;
+}
+.ol {
+    display: flex;
+    margin:0;
+    padding:0;
+    list-style: none;
+    justify-content: space-between;
+    column-gap: 0.5em;
+}
